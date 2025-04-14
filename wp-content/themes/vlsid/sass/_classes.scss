@@ -1,0 +1,12 @@
+a {
+  @apply hover:underline underline-offset-4;
+}
+
+.btn {
+  @apply scale-95 hover:scale-100 active:scale-95 transition-all duration-300 ease-in-out h-max w-max px-6 py-2 text-white rounded-lg capitalize text-sm;
+  background: linear-gradient(109.39deg, #001f60 13.02%, #d89c5c 162.49%);
+}
+
+.header-nav-links {
+  @apply flex gap-4 items-center text-primary;
+}

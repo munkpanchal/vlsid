@@ -1,0 +1,24 @@
+:root {
+  // Color
+  --color-primary: #00366e;
+  --color-primary-rgb: 0, 54, 110;
+  --color-font: var(--color-primary);
+  --color-secondary: #d89c5c;
+  --color-secondary-rgb: 216, 156, 92;
+  --color-gray: #d9d9d9;
+  --color-gray-rgb: 217, 217, 217;
+  --color-error: #ff4d4f;
+
+  // Text
+  --font-title: "Roboto", "sans-serif";
+  --font-text: "Roboto", "sans-serif";
+
+  // Easings
+  --easing-quint-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --easing-quint-ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+  --easing-basic-in-out: cubic-bezier(0.67, 0, 0.06, 1);
+
+  // z-indexes
+  --zindex-header: 500;
+  --zindex-overlay: 501;
+}
