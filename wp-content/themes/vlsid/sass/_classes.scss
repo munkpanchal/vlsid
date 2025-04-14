@@ -10,3 +10,29 @@ a {
 .header-nav-links {
   @apply flex gap-4 items-center text-primary;
 }
+.cards-wrapper {
+  @apply grid gap-4 lg:gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  @apply rounded-lg shadow-sm shadow-[#ffffff60] overflow-hidden sm:hover:scale-105 transition-all duration-300;
+  .card-image {
+    @apply aspect-square;
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+  .card-content {
+    @apply p-4 bg-primary;
+    .title {
+      @apply capitalize text-white text-xl line-clamp-1;
+    }
+    p {
+      @apply text-white text-sm line-clamp-2;
+    }
+  }
+  & > * {
+    pointer-events: none;
+  }
+}
