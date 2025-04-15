@@ -3,14 +3,14 @@ import "@splidejs/splide/css";
 import Splide from "@splidejs/splide";
 
 if (Splide) {
-  if (document.querySelector(".splide")) {
-    const slide2 = new Splide(".splide", {
+  if (document.querySelector("#conference-slider")) {
+    const slide2 = new Splide("#conference-slider", {
       type: "loop",
       perPage: 3,
       center: true,
       perMove: 1,
-      arrows: true,
-      autoplay: false,
+      arrows: false,
+      autoplay: true,
       speed: 300,
       gap: 16,
       pagination: false,
@@ -20,10 +20,17 @@ if (Splide) {
         },
       },
     }).mount();
-    if (document.querySelector(".splide-testimonial")) {
-      const slide2 = new Splide(".splide-testimonial", {
+    // Custom arrow functionality
+    const prevArrow = document.querySelector("#custom-prev");
+    const nextArrow = document.querySelector("#custom-next");
+    prevArrow?.addEventListener("click", () => slide2.go("<"));
+
+    nextArrow?.addEventListener("click", () => slide2.go(">"));
+
+    if (document.querySelector("#splide-testimonial")) {
+      const testimonialSlider = new Splide("#splide-testimonial", {
         type: "loop",
-        perPage: 5,
+        perPage: 3,
         center: true,
         perMove: 1,
         arrows: true,
@@ -37,16 +44,19 @@ if (Splide) {
           },
         },
       }).mount();
+      // Custom arrow functionality
+      const testPrevArrow = document.querySelector("#custom-test-prev");
+      const testNextArrow = document.querySelector("#custom-test-next");
 
-      // // Custom arrow functionality
-      // const prevArrow = document.querySelectorAll("#custom-prev");
-      // const nextArrow = document.querySelectorAll("#custom-next");
-      // prevArrow.forEach((arrow) => {
-      //   arrow?.addEventListener("click", () => slide2.go("<"));
-      // });
-      // nextArrow.forEach((arrow) => {
-      //   arrow?.addEventListener("click", () => slide2.go(">"));
-      // });
+      testPrevArrow?.addEventListener("click", () => {
+        console.log("first");
+        testimonialSlider.go("<");
+      });
+
+      testNextArrow?.addEventListener("click", () => {
+        console.log("second");
+        testimonialSlider.go(">");
+      });
     }
   }
 }

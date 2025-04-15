@@ -27,7 +27,12 @@
     <div class="container py-20">
         <div class="legacy-wrapper flex sm:flex-row flex-col gap-10">
             <div class="flex flex-col gap-4 ">
-                <h2 class="font-normal uppercase text-3xl">vlsid 2026</h2>
+                <h2 class=" flex flex-col gap-2 font-normal uppercase text-3xl w-max">vlsid 2026
+
+                    <div class="inline-block w-full h-[2px]"
+                        style="background: linear-gradient(90deg, #001F60 0%, #24FFE5 100%);">
+                    </div>
+                </h2>
                 <h1 class="text-5xl sm:text-8xl font-extrabold italic px-20"
                     style="background: linear-gradient(104.39deg, #00366E 10.21%, #24FFE5 118.59%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; padding-left: 10px;">
                     A Legacy of <br> Innovation
