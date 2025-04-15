@@ -16,8 +16,11 @@ $categories = get_categories($category_args);
 
     <div class="container py-20">
 
-        <div class="flex flex-col gap-16">
 
+        <div class="flex flex-col gap-16">
+            <h1 class="section-title">
+                <span class="font-bold uppercase">our </span> Partners
+            </h1>
             <?php
             if (!empty($categories) && !is_wp_error($categories)) {
                 foreach ($categories as $category) {
@@ -91,4 +94,5 @@ $categories = get_categories($category_args);
         </div>
 
     </div>
+
 </section>

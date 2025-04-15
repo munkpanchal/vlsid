@@ -17,6 +17,11 @@ $categories = get_categories($args);
     <div class="container py-20">
 
 
+
+        <h2 class="text-center text-white text-3xl mb-16">
+            Global Visionaries & Thought Leaders
+        </h2>
+
         <div class="cards-wrapper">
 
             <?php
@@ -37,52 +42,125 @@ $categories = get_categories($args);
             ?>
 
 
-            <div class="card">
-                <figure class="card-image">
-                    <img src="<?php echo $imageUrl ? $imageUrl : get_theme_file_uri("/public/placeholder.png") ?>"
-                        alt="">
-                </figure>
-                <div class="card-content">
-                    <h2 class="title">
-                        <?php
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="<?php echo $imageUrl ? $imageUrl : get_theme_file_uri("/public/placeholder.png") ?>"
+                                    alt="">
+                            </figure>
+                            <div class="card-content">
+                                <h2 class="title">
+                                    <?php
                                     echo get_the_title($post_id);
                                     ?>
-                    </h2>
-                    <?php
+                                </h2>
+                                <?php
                                 if ($designation) {
                                 ?>
-                    <p>
-                        <?php
+                                    <p>
+                                        <?php
                                         echo $designation;
                                         ?>
-                    </p>
-                    <?php
+                                    </p>
+                                <?php
                                 }
                                 ?>
 
-                    <?php
+                                <?php
 
 
                                 if ($company) {
                                 ?>
-                    <p>
-                        <?php
+                                    <p>
+                                        <?php
                                         echo $company;
                                         ?>
-                    </p>
-                    <?php
+                                    </p>
+                                <?php
                                 }
                                 ?>
 
-                </div>
+                            </div>
 
-            </div>
+                        </div>
             <?php
                     }
                 }
             }
             ?>
         </div>
+
+
+        <h2 class="text-center text-white text-3xl my-16">
+            Distinguished Speakers
+        </h2>
+
+        <div class="cards-wrapper">
+
+            <?php
+
+
+            for ($i = 0; $i < 10; $i++) {
+
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $post_id = get_the_ID();
+
+                        $imageUrl = get_field('speaker_image', $post_id);
+                        $designation = get_field('speaker_designation', $post_id);
+                        $company = get_field('speaker_company', $post_id);
+
+
+            ?>
+
+
+                        <div class="card">
+                            <figure class="card-image">
+                                <img src="<?php echo $imageUrl ? $imageUrl : get_theme_file_uri("/public/placeholder.png") ?>"
+                                    alt="">
+                            </figure>
+                            <div class="card-content">
+                                <h2 class="title">
+                                    <?php
+                                    echo get_the_title($post_id);
+                                    ?>
+                                </h2>
+                                <?php
+                                if ($designation) {
+                                ?>
+                                    <p>
+                                        <?php
+                                        echo $designation;
+                                        ?>
+                                    </p>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+
+
+                                if ($company) {
+                                ?>
+                                    <p>
+                                        <?php
+                                        echo $company;
+                                        ?>
+                                    </p>
+                                <?php
+                                }
+                                ?>
+
+                            </div>
+
+                        </div>
+            <?php
+                    }
+                }
+            }
+            ?>
+        </div>
+
 
 
 

@@ -36,3 +36,11 @@ a {
     pointer-events: none;
   }
 }
+
+.section-title {
+  @apply text-6xl font-extrabold italic;
+}
+
+.box {
+  @apply bg-slate-100 min-h-60;
+}
