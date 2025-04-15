@@ -28,8 +28,8 @@ if (Splide) {
       gap: 16,
       pagination: false,
       breakpoints: {
-        1024: {
-          perPage: 3,
+        600: {
+          perPage: 1,
         },
       },
     }).mount();
@@ -52,7 +52,7 @@ if (Splide) {
         gap: 16,
         pagination: false,
         breakpoints: {
-          1024: {
+          600: {
             perPage: 1,
           },
         },
