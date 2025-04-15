@@ -2,6 +2,19 @@ import "./modules/feature";
 import "@splidejs/splide/css";
 import Splide from "@splidejs/splide";
 
+/* Hamburger  */
+const dropdown = document.querySelector(".dropdown");
+document.querySelector(".hamburger").addEventListener("click", function () {
+  if (dropdown.classList.contains("active")) {
+    dropdown.classList.remove("active");
+    this.classList.remove("active");
+  } else {
+    dropdown.classList.add("active");
+    this.classList.add("active");
+  }
+});
+/* Hamburger End */
+
 if (Splide) {
   if (document.querySelector("#conference-slider")) {
     const slide2 = new Splide("#conference-slider", {
@@ -40,7 +53,7 @@ if (Splide) {
         pagination: false,
         breakpoints: {
           1024: {
-            perPage: 3,
+            perPage: 1,
           },
         },
       }).mount();

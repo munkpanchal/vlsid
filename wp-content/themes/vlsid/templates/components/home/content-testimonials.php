@@ -11,7 +11,7 @@ $post_query = new WP_Query($post_args);
 <section class="conference">
     <div class="container py-20 relative">
 
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col gap-8 lg:gap-16">
             <h1 class="section-title  text-center">
                 <span class="font-bold ">Praised by </span> Experts
             </h1>

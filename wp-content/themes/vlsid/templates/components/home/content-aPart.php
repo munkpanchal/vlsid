@@ -20,7 +20,7 @@ $beAparts = [
 <section class="be-apart">
     <div class="container py-20">
 
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col gap-8 lg:gap-16">
             <h1 class="section-title  text-center">
                 <span class="font-bold ">Be a Part at </span>VLSID in Pune
             </h1>

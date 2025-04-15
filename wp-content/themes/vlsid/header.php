@@ -34,16 +34,16 @@ $site_desc = $meta_data['description'] ?? null;
 </head>
 
 <body>
-	<header
-		class="bg-white py-4 sticky top-0 z-50">
+	<header class="bg-white py-4 sticky top-0 z-50">
 		<div class="container">
-			<div class="header-wrapper flex justify-between ">
+			<div class="header-wrapper flex justify-between items-center">
 				<div class="logo
-				w-[min(100%_,_180px)]
+				w-36 sm:w-[min(100%_,_180px)]
 				">
-					<img src="<?php echo get_theme_file_uri("/public/logo.svg"); ?>" alt="<?php echo esc_attr($site_name); ?>">
+					<img src="<?php echo get_theme_file_uri("/public/logo.svg"); ?>"
+						alt="<?php echo esc_attr($site_name); ?>">
 				</div>
-				<div class="flex items-center gap-4">
+				<div class="flex items-center gap-4 max-sm:hidden">
 					<?php
 					echo wp_nav_menu(array(
 						'theme_location' => 'header_nav',
@@ -57,7 +57,15 @@ $site_desc = $meta_data['description'] ?? null;
 						register now
 					</button>
 				</div>
+				<div class="hamburger sm:hidden">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 			</div>
 		</div>
 
 	</header>
+	<div class="dropdown ">
+		dropdown wil lcome her
+	</div>

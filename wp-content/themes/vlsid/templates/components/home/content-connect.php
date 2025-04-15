@@ -1,6 +1,6 @@
 <section class="connect bg-[#D9D9D9] rounded-2xl">
     <div class="container py-20">
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4 sm:gap-8">
             <h1 class="section-title  text-center">
                 <span class="font-bold ">Let's Keep in </span>Touch
             </h1>
@@ -14,7 +14,7 @@
             <div class="newsletter-form">
 
                 <?php
-                // echo do_shortcode('[contact-form-7 id="385cf60" title="Newsletter"]');
+                echo do_shortcode('[contact-form-7 id="385cf60" title="Newsletter"]');
                 ?>
             </div>
         </div>

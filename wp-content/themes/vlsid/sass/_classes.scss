@@ -2,6 +2,49 @@ header a {
   @apply hover:underline underline-offset-4;
 }
 
+/* Hamburger */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  @apply bg-primary;
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  transform-origin: right;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Active state for animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg);
+}
+/* Hamburger End */
+/* Header Dropdown */
+.dropdown {
+  @apply fixed w-full h-full bg-slate-100 left-0 -top-[120vh] py-24 transition-all duration-300 ease-in-out;
+  &.active {
+    top: 0;
+  }
+}
+/* Header Dropdown End */
+
 .btn {
   @apply hover:shadow-md active:scale-95 transition-all duration-300 ease-in-out h-max w-max px-6 py-2 text-white rounded-lg capitalize text-sm;
   background: linear-gradient(109.39deg, #001f60 13.02%, #d89c5c 162.49%);
@@ -37,7 +80,7 @@ header a {
 }
 
 .section-title {
-  @apply text-6xl font-extrabold italic;
+  @apply text-4xl sm:text-6xl font-extrabold italic;
 }
 
 .box {
@@ -58,4 +101,26 @@ header a {
   }
 }
 
-// .newsletter
+.section-content {
+  @apply py-10 sm:py-20;
+}
+
+.newsletter-form {
+  @apply flex flex-col gap-4 items-center;
+
+  input[type="email"] {
+    padding: 0.5rem 1rem;
+    border: 1px solid #1e1e1e52;
+    border-radius: 1rem;
+    padding-right: 1rem;
+    background-color: transparent;
+    &:focus {
+      border: 1px solid #1e1e1e52;
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    @apply cursor-pointer hover:shadow-md active:scale-95 transition-all duration-300 ease-in-out w-max px-6 py-2 text-white rounded-2xl h-[40px] capitalize text-sm;
+    background: linear-gradient(109.39deg, #001f60 13.02%, #d89c5c 162.49%);
+  }
+}
