@@ -1,2 +1,100 @@
 @use '../helpers' as *;
 
+.footer {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  @apply pt-16 pb-10 xl:pt-32 xl:pb-16;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: var(--color-primary);
+    z-index: -2;
+  }
+
+  &::after {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: rem(568);
+    transform: translate(140%, 115px);
+    position: absolute;
+    background: url('../../public/overlay.svg') no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: rem(20);
+  }
+
+  &__col {
+    flex-basis: 100%;
+
+    @media screen and (min-width: 1198.98px) {
+      flex-basis: calc((100% / 4) - (rem(20) / 4 ) * 3);
+    }
+  }
+
+  &__logo {
+    img {
+      max-width: rem(150);
+      object-fit: cover;
+    }
+  }
+
+  &__nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      gap: rem(10);
+
+      @apply flex xl:flex-col;
+    }
+
+    a {
+      font-family: var(--font-title);
+      font-weight: 300;
+      font-size: rem(14);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+  }
+
+  &__copyright {
+    .content {
+      font-family: var(--font-title);
+      font-weight: 300;
+      font-size: rem(12);
+      color: rgb(255, 255, 255);
+      text-align: center;
+      margin-left: rem(16);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: rem(16);
+
+  a {
+      font-family: var(--font-title);
+      font-size: rem(12);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--color-secondary);
+      }
+    }
+  }
+}

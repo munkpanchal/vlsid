@@ -13,7 +13,7 @@ function display_social_links($atts) {
     $atts = shortcode_atts(
         array(
             'icon' => 'true',
-            'title' => 'true',
+            'label' => 'true',
         ),
         $atts,
         'social_links'
@@ -29,15 +29,15 @@ function display_social_links($atts) {
                 $escaped_url = esc_url($url);
                 $escaped_network = esc_attr($network);
                 $icon_html = $atts['icon'] === 'true' ? "<img src='{$social_ico_dir}/{$escaped_network}.svg' alt='{$escaped_network}' class='social-icon' width='32' height='32'>" : '';
-                $title_html = $atts['title'] === 'true' ? "<span class='social-title'>{$escaped_network}</span>" : '';
+                $label_html = $atts['label'] === 'true' ? "<span class='social-label'>{$escaped_network}</span>" : '';
                 $output .= "
                 <a href='{$escaped_url}' target='_blank' rel='noopener noreferrer' class='social-link'>
-                    {$icon_html} {$title_html}
+                    {$icon_html} {$label_html}
                 </a>";
             }
         }
     } else {
-        $output .= "<p class='text-sm/normal text-black'>No social media links found.</p>";
+        $output .= "<p class='text-xs/normal text-white'>No social media links found.</p>";
     }
 
     return $output;
