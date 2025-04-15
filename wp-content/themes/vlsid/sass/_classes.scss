@@ -38,11 +38,12 @@ header a {
 /* Hamburger End */
 /* Header Dropdown */
 .dropdown {
-  @apply fixed w-full h-full bg-slate-100 left-0 -top-[120vh] py-24 transition-all duration-300 ease-in-out;
+  @apply z-[49] fixed w-full h-full bg-slate-100 left-0 -top-[120vh] py-24 transition-all duration-300 ease-in-out;
   &.active {
     top: 0;
   }
 }
+
 /* Header Dropdown End */
 
 .btn {
